@@ -1,0 +1,42 @@
+:root {
+  font-size: 18px;
+  --border-radius: 6px;
+  --primary-color: #515CC6;
+  --secondary-color: #3F4EA0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #DADADA;
+    --gray-color: #575767;
+    --background-color: #141419;
+    --border-color: #0E0E11;
+    --input-background-color: #2B2D37;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #575767;
+    --gray-color: #B9B9BE;
+    --background-color: #F8F8F8;
+    --border-color: #DADADA;
+    --input-background-color: #FCFCFC;
+  }
+}
+
+.dark {
+  --text-color: #DADADA;
+  --gray-color: #575767;
+  --background-color: #141419;
+  --border-color: #0E0E11;
+  --input-background-color: #2B2D37;
+}
+
+.light {
+  --text-color: #575767;
+  --gray-color: #B9B9BE;
+  --background-color: #F8F8F8;
+  --border-color: #DADADA;
+  --input-background-color: #FCFCFC;
+}

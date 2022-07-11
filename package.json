@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn css:build && remix build ",
+    "dev": "remix dev & yarn css:watch",
+    "start": "remix-serve build",
+    "css:watch": "esbuild `find src/styles \\( -name '*.css' -not -path 'src/styles/build/*' \\)` --outdir=src/styles/build --bundle --watch",
+    "css:build": "esbuild `find src/styles \\( -name '*.css' -not -path 'src/styles/build/*' \\)` --outdir=src/styles/build --bundle --minify",
+    "prisma:format": "prisma format",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.0.0",
+    "@remix-run/node": "^1.6.4",
+    "@remix-run/react": "^1.6.4",
+    "@remix-run/serve": "^1.6.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix-utils": "^3.3.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.6.4",
+    "@remix-run/eslint-config": "^1.6.4",
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.17",
+    "esbuild": "^0.14.48",
+    "eslint": "^8.15.0",
+    "prisma": "^4.0.0",
+    "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

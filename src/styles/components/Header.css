@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header__settings {
+  display: flex;
+  align-items: center;
+}
+
+.header__settings svg {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.header__settings svg:is(:hover,:focus) {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

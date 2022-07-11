@@ -1,0 +1,32 @@
+@import 'variables.css';
+@import 'common/index.css';
+@import 'components/index.css';
+
+body {
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  transition: all .5s cubic-bezier(0, 0, 0.2, 1);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+main, header {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto 1em;
+}
