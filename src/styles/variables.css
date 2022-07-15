@@ -3,6 +3,7 @@
   --border-radius: 6px;
   --primary-color: #515CC6;
   --secondary-color: #3F4EA0;
+  --overlay-color: #22222280;
 }
 
 @media (prefers-color-scheme: dark) {

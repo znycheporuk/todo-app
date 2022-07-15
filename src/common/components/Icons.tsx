@@ -20,3 +20,9 @@ export const GearIcon = (props: SVGProps<any>) => (
     </g>
   </svg>
 )
+
+export const PlusIcon = (props: SVGProps<any>) => (
+  <svg height='1.5em' width='1.5em' viewBox='0 0 22 22' fill='none' {...props}>
+    <path d='M11 1V21M1 11H21' stroke='white' strokeWidth='2' strokeLinecap='round' strokeLinejoin='bevel' />
+  </svg>
+)

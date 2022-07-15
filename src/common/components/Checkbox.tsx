@@ -1,7 +1,7 @@
 import type { HTMLProps } from 'react'
 
 interface ICheckboxProps extends HTMLProps<HTMLInputElement> {
-  label: string
+  label?: string
 }
 
 export const Checkbox = ({label, ...props}: ICheckboxProps) => {

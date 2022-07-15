@@ -51,8 +51,7 @@ const Document = ({title, theme, children}: IDocumentProps) => (
     <head>
       <Meta />
       <Links />
-      {title ? <title>{title}</title> : null}
-      <title>To Do App</title>
+      <title>{title ?? 'To Do App'}</title>
     </head>
     <body>
       <Header />

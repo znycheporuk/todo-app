@@ -18,3 +18,5 @@ export const getCurrentUser = async (session: Session) => {
     headers: userId ? undefined : {'Set-Cookie': await commitSession(session)}
   }
 }
+
+export const cx = (...args: any[]) => args.filter(item => !!item).join(' ');

@@ -29,4 +29,5 @@ main, header {
   width: 100%;
   max-width: 768px;
   margin: 0 auto 1em;
+  position: relative;
 }
