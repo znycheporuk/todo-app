@@ -1,4 +1,4 @@
-import type { LinksFunction, LoaderFunction, MetaFunction } from '@remix-run/node'
+import type { LinksFunction, LoaderArgs, LoaderFunction, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch, useLoaderData, } from '@remix-run/react'
 import type { ReactNode } from 'react'
@@ -18,7 +18,7 @@ export const links: LinksFunction = () => [
   {rel: 'stylesheet', href: styles}
 ]
 
-export const loader: LoaderFunction = async ({request}) => {
+export const loader = async ({request}: LoaderArgs) => {
   const session = await getUserSession(request)
   const {user, headers} = await getCurrentUser(session)
 
@@ -29,9 +29,10 @@ export const loader: LoaderFunction = async ({request}) => {
     headers
   })
 }
+export type TRootData = typeof loader
 
 export default () => {
-  const data = useLoaderData()
+  const data = useLoaderData<TRootData>()
   console.log(data)
   return (
     <Document theme={data?.theme}>

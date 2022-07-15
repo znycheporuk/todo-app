@@ -1,10 +1,10 @@
-import type { LoaderFunction } from '@remix-run/node'
+import type { LoaderArgs } from '@remix-run/node';
 import { Form, Link, useLoaderData } from '@remix-run/react'
 import { AddButton, Checkbox } from '~/common/components'
 import { db } from '~/db.server'
 import { getUserSession } from '~/session.server'
 
-export const loader: LoaderFunction = async ({request}) => {
+export const loader = async ({request}: LoaderArgs) => {
   const session = await getUserSession(request)
   const userId = session.get('userId')
   const tasks = await db.task.findMany({
@@ -19,7 +19,7 @@ export const loader: LoaderFunction = async ({request}) => {
 }
 
 export default () => {
-  const tasks = useLoaderData()
+  const tasks = useLoaderData<typeof loader>()
   const dateString = new Date().toLocaleString('en', {month: 'long', day: 'numeric', year: 'numeric'})
 
   return (
